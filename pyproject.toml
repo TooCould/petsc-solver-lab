@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "petsc-solver-lab"
+version = "0.1.0"
+description = "Scaffold for a PETSc sparse solver and diagnostics lab"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+numerics = ["numpy", "scipy", "matplotlib"]
+dev = ["pytest"]
+
+[project.scripts]
+solver-lab = "solver_lab.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
